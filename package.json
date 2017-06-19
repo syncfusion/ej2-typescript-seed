@@ -1,0 +1,39 @@
+{
+  "name": "ej2-typescript-seed",
+  "version": "0.0.1",
+  "description": "ej2 typescript seed project",
+  "author": "Syncfusion Inc.",
+  "license": "SEE LICENSE IN license",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/syncfusion/ej2-typescript-seed"
+  },
+  "dependencies": {
+    "@syncfusion/ej2": "*"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.5.52",
+    "@types/requirejs": "^2.1.29",
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.1.7",
+    "jasmine": "^2.6.0",
+    "jasmine-core": "^2.6.4",
+    "karma": "^1.7.0",
+    "karma-generic-preprocessor": "^1.1.0",
+    "karma-htmlfile-reporter": "^0.3.5",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-requirejs": "^1.1.0",
+    "phantomjs-prebuilt": "^2.1.14",
+    "requirejs": "^2.3.3",
+    "ts-loader": "^2.1.0",
+    "typescript": "2.3.4",
+    "webpack": "2.5.1",
+    "webpack-stream": "^3.2.0"
+  },
+  "scripts": {
+    "start": "gulp serve",
+    "test": "gulp test"
+  }
+}
