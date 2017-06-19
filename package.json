@@ -33,7 +33,7 @@
     "webpack-stream": "^3.2.0"
   },
   "scripts": {
-    "start": "gulp serve",
+    "serve": "gulp serve",
     "test": "gulp test"
   }
 }
