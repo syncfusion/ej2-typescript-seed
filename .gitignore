@@ -1,4 +1,2 @@
 src/**/*.js
-spec/**/*.js
 node_modules/
-test-report/

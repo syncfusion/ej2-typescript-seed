@@ -12,5 +12,5 @@ exports.config = {
         defaultTimeoutInterval: 10000
     },
 
-    specs: ['../spec/**/*.spec.js']
+    specs: ['./*.spec.js']
 };
