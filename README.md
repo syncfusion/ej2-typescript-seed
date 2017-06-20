@@ -43,7 +43,7 @@ npm run test
 
 The application is configured with `browser-sync`, so it will serve the web application in your default browser.
 
-We used `webpack` to bundle the source file and `gulp-sass` to compile the styles, before running the application in browser.
+We used `webpack` to bundle the source file, before running the application in browser.
 
 You can use the below command to run the web application.
 
