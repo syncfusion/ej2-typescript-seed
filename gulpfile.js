@@ -5,7 +5,7 @@ var gulp = require('gulp');
 /**
  * Load the sample in src/app/index
  */
-gulp.task('serve', ['compile'], function(done) {
+gulp.task('start', ['compile'], function(done) {
     var browserSync = require('browser-sync');
     var bs = browserSync.create('Essential JS 2');
     var options = {
@@ -27,10 +27,9 @@ gulp.task('serve', ['compile'], function(done) {
 gulp.task('compile', function(done) {
     var webpack = require('webpack');
     var webpackStream = require('webpack-stream');
-    gulp.src(['./src/app/index.ts', './spec/index.spec.ts']).pipe(webpackStream({
+    gulp.src(['./src/app/index.ts']).pipe(webpackStream({
             entry: {
-                'src/app/index': './src/app/index.ts',
-                'spec/index.spec': './spec/index.spec.ts'
+                'src/app/index': './src/app/index.ts'
             },
             output: {
                 filename: '[name].js'
@@ -55,11 +54,45 @@ gulp.task('compile', function(done) {
 /**
  * Testing spec files
  */
-gulp.task('test', ['compile'], function(done) {
-    var karma = require('karma');
-    new karma.Server({
-        configFile: __dirname + '/karma.conf.js'
-    }, function(e) {
-        done(e === 0 ? null : 'karma exited with status ' + e);
-    }).start();
+var protractor = require('gulp-protractor').protractor;
+var webdriver_standalone = require('gulp-protractor').webdriver_standalone;
+var webdriver_update = require('gulp-protractor').webdriver_update_specific;
+
+gulp.task('e2e-serve', webdriver_standalone);
+
+gulp.task('e2e-webdriver-update', webdriver_update({
+    webdriverManagerArgs: ['--ie', '--edge']
+}));
+
+gulp.task('e2e-test', ['compile'], function(done) {
+    var browserSync = require('browser-sync');
+    var bs = browserSync.create('Essential JS 2');
+    var options = {
+        server: {
+            baseDir: [
+                './src/app/',
+                './src/resource/',
+                './node_modules/@syncfusion/ej2/'
+            ],
+            directory: true
+        },
+        ui: false,
+        open: false,
+        notify: false
+    };
+    bs.init(options, function() {
+        gulp.src(['./spec/**/*.spec.js'])
+            .pipe(protractor({
+                configFile: 'e2e/protractor.conf.js'
+            }))
+            .on('error', function(e) {
+                console.error('Error: ' + e.message);
+                done();
+                process.exit(1);
+            })
+            .on('end', function() {
+                done();
+                process.exit(0);
+            });
+    });
 });

@@ -6,7 +6,7 @@ The seed contains Essential JS 2 button component for preview and all common set
 
 ## Getting Started
 
-To get started you need to clone the `ej2-typescript-seed` repository and navigate to ej2-typescript-seed location.
+To get started you need to clone the `ej2-typescript-seed` repository and navigate to `ej2-typescript-seed` location.
 
 ```
 git clone https://github.com/syncfusion/ej2-typescript-seed.git
@@ -27,17 +27,33 @@ npm install
 
 ## Testing
 
-This application is preconfigured with unit test of Essential JS 2 button component.
+This application is preconfigured with End-to-End testing and the test case is written in Jasmine.
 
-The test case is written in Jasmine and we run it with Karma test runner. The karma configuration settings are available in the `karma.conf.js` file.
+We run the test scripts with [Protractor](http://www.protractortest.org/#/) end-to-end test runner. The test case file can be found in the `spec` folder.
 
-The test case file can be found in the `spec` folder.
+Protractor can interact with our web application and verify the test scripts.
 
-You can simply run the below command to get the test report in `test-report` location.
+We have to install WebDriver and also need to ensure it is updated. Open a separate terminal and run the below npm script.
+
+```
+npm run update-webdriver
+```
+
+Open another terminal and run the below npm script. It will start web server to serve our application.
+
+```
+npm run serve
+```
+
+Once the web server is up and running, we can run the end-to-end tests using the below npm script
 
 ```
 npm run test
 ```
+
+**Note:** Since Protractor is using the Selenium Standalone Server, the Java Development Kit (JDK) need to be installed in your local machine.
+
+If JDK is not installed in your local machine, you can download it from [here](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
 ## Running
 
@@ -45,10 +61,10 @@ The application is configured with `browser-sync`, so it will serve the web appl
 
 We used `webpack` to bundle the source file, before running the application in browser.
 
-You can use the below command to run the web application.
+You can use the below npm script to run the web application.
 
 ```
-npm run serve
+npm run start
 ```
 
 ## Resources
