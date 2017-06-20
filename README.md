@@ -29,7 +29,7 @@ npm install
 
 This application is preconfigured with End-to-End testing and the test case is written in Jasmine.
 
-We run the test scripts with [Protractor](http://www.protractortest.org/#/) end-to-end test runner. The test case file can be found in the `spec` folder.
+We run the test scripts with [Protractor](http://www.protractortest.org/#/) end-to-end test runner. The test case file can be found in the `e2e` folder.
 
 Protractor can interact with our web application and verify the test scripts.
 
