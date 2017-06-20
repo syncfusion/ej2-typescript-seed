@@ -1,8 +1,8 @@
 # Essential JS 2 Typescript Seed
 
-This seed project is a skeleton application used to create Essential JS 2 component application.
+This seed project is a skeleton application used to create [Essential JS 2](https://www.syncfusion.com/products/essential-js2) web application.
 
-The seed contains the Essential JS 2 button component and all common settings are preconfigured in this project.
+The seed contains Essential JS 2 button component for preview and all common settings are preconfigured.
 
 ## Getting Started
 
@@ -15,11 +15,11 @@ cd ej2-typescript-seed
 
 ## Installing
 
-We can get all Essential JS 2 component in a single npm package called `ej2`.
+We can get all the Essential JS 2 components in a single npm package [`ej2`](https://www.npmjs.com/package/@syncfusion/ej2).
 
 We already configure the required packages in the `package.json` file.
 
-You can run the below command to install all dependent packages to this seed project.
+You can run the below command to install all dependent packages related to this seed project.
 
 ```
 npm install
@@ -41,9 +41,9 @@ npm run test
 
 ## Running
 
-We used `webpack` to bundle the source file and `gulp-sass` to compile the styles, before running the application in browser.
-
 The application is configured with `browser-sync`, so it will serve the web application in your default browser.
+
+We used `webpack` to bundle the source file and `gulp-sass` to compile the styles, before running the application in browser.
 
 You can use the below command to run the web application.
 
