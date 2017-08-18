@@ -12,7 +12,7 @@ gulp.task('start', ['compile'], function(done) {
         server: {
             baseDir: [
                 './src/app/',
-                './src/resource/',
+                './src/',
                 './node_modules/@syncfusion/ej2/'
             ]
         },
@@ -27,23 +27,7 @@ gulp.task('start', ['compile'], function(done) {
 gulp.task('compile', function(done) {
     var webpack = require('webpack');
     var webpackStream = require('webpack-stream');
-    gulp.src(['./src/app/index.ts']).pipe(webpackStream({
-            entry: {
-                'src/app/index': './src/app/index.ts'
-            },
-            output: {
-                filename: '[name].js'
-            },
-            module: {
-                rules: [{
-                    loader: 'ts-loader',
-                    exclude: /node_modules/,
-                }]
-            },
-            resolve: {
-                extensions: [".ts", ".js"]
-            }
-        }, webpack))
+    gulp.src(['./src/app/index.ts']).pipe(webpackStream(require('./webpack.config.js'), webpack))
         .pipe(gulp.dest('./'))
         .on('end', function() {
             done();
