@@ -1,3 +1,4 @@
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
     entry: {
         'src/app/index': './src/app/index.ts'
@@ -10,6 +11,9 @@ module.exports = {
             loader: 'ts-loader',
             exclude: /node_modules/,
         }]
+    },
+    optimization: {
+        minimizer: [new UglifyJsPlugin()]
     },
     resolve: {
         extensions: [".ts", ".js"]
